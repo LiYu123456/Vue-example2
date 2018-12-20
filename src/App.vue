@@ -4,7 +4,7 @@
     <div class="todo-wrap">
       <Header :addGender="addGender"></Header>
       <List :Genders="Genders" :deleteGender="deleteGender"></List>
-      <Footer></Footer>
+      <Footer :Genders="Genders" :delSelectedGender="delSelectedGender" :selectAll="selectAll"></Footer>
     </div>
   </div>
   </div>
@@ -42,6 +42,12 @@ export default {
     },
     deleteGender (index) {
       this.Genders.splice(index, 1)
+    },
+    delSelectedGender () {
+      this.Genders = this.Genders.filter(gender => !gender.selected)
+    },
+    selectAll (arg) {
+      this.Genders.forEach(gender => (gender.selected = arg))
     }
   }
 }

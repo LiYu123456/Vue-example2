@@ -1,7 +1,7 @@
 <template>
     <ul class="todo-main">
         <Item v-for="(gender,index) in Genders" :key="index"
-            :gender="gender" :index="index"></Item>
+            :gender="gender" :index="index" :deleteGender="deleteGender"></Item>
     </ul>
 </template>
 <script>
