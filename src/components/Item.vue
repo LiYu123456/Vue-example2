@@ -8,6 +8,7 @@
     </li>
 </template>
 <script>
+import PubSub from 'pubsub-js'
 export default {
   props: {
     gender: Object,
@@ -33,7 +34,10 @@ export default {
     delGender () {
       const {gender, index, deleteGender} = this
       if (window.confirm(`确定删除爱好${gender.title}`)) {
-        deleteGender(index)
+        console.log(index)
+        // deleteGender(index)
+        //发布消息
+        PubSub.publish('deleteGender',index)
       }
     }
   }
