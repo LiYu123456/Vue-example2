@@ -33,7 +33,6 @@ export default {
     delGender () {
       const {gender, index, deleteGender} = this
       if (window.confirm(`确定删除爱好${gender.title}`)) {
-        console.log(index)
         deleteGender(index)
       }
     }
