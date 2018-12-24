@@ -36,8 +36,8 @@ export default {
       if (window.confirm(`确定删除爱好${gender.title}`)) {
         console.log(index)
         // deleteGender(index)
-        //发布消息
-        PubSub.publish('deleteGender',index)
+        // 发布消息
+        PubSub.publish('deleteGender', index)
       }
     }
   }
